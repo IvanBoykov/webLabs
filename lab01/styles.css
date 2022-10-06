@@ -19,3 +19,15 @@
 .top-navigation a.active {
 	background-color: #111111;
 }
+
+/* board */
+#board td.board-cell{
+	width: 10%;
+	height: 10%;
+}
+#board td.cell-black{
+	background-color: black;
+}
+#board td.cell-white{
+	background-color: white;
+}
