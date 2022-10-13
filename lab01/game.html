@@ -43,12 +43,12 @@
 				cellImage.alt="Белое поле";
 			} else {
 				//черное поле
-				if(row< 3 ){
+				if(row> 4){
 					//с белой шашкой
-					cellImage.src="img/cbelaya-shashka.svg";
+					cellImage.src="img/belaya-shashka.svg";
 					cellImage.alt="Белая шашка";
 					cellClass="cell-white-checker";
-				}else if(row > 4){
+				}else if(row < 3){
 					//с черной шашкой
 					cellImage.src="img/chyornaya-shashka.svg";
 					cellImage.alt="Черная шашка";

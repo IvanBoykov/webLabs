@@ -1,6 +1,9 @@
+#board table{
+	height: 95%;
+	aspect-ratio: 1;
+}
 
 #board img {
-	width: 10%;
-	height: 10%;
+
 	display: block;
 }
