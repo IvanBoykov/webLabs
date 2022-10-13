@@ -34,12 +34,32 @@
 		let tr = document.createElement("tr")
 		for (let col = 0; col < 8; col++) {
 			let cellImage=document.createElement("img");
-			cellImage.src="img/chyornoe-pole.svg";
+			
 			let cellClass = "cell-black";
 			if ((row + col) % 2 == 0) {
+				//белое поле
 				cellClass = "cell-white";
-				//cellImage.src="/img/beloe-pole.svg";
-				cellImage.setAttribute("src", "img/beloe-pole.svg");
+				cellImage.src="img/beloe-pole.svg";
+				cellImage.alt="Белое поле";
+			} else {
+				//черное поле
+				if(row< 3 ){
+					//с белой шашкой
+					cellImage.src="img/cbelaya-shashka.svg";
+					cellImage.alt="Белая шашка";
+					cellClass="cell-white-checker";
+				}else if(row > 4){
+					//с черной шашкой
+					cellImage.src="img/chyornaya-shashka.svg";
+					cellImage.alt="Черная шашка";
+					cellClass="cell-black-checker";
+				}
+				else{
+					//без шашки
+					cellClass="cell-black";
+					cellImage.src="img/chyornoe-pole.svg";
+					cellImage.alt="Черное поле";
+				}
 			}
 			let cell = document.createElement("td");
 			cell.appendChild(cellImage);
