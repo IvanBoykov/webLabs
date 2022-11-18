@@ -1,0 +1,22 @@
+.top-navigation {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+.top-navigation > li {
+	float: left;
+}
+.top-navigation a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none
+}
+
+.top-navigation a.active {
+	background-color: #111111;
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="game.css">
+	<title>Шашки</title>
+</head>
+
+<body>
+	<nav>
+		<ul class="top-navigation">
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="rules.html">Правила</a></li>
+			<li><a class="active" href="game.html">Игра</a></li>
+		</ul>
+	</nav>
+
+	<div id="root">
+
+	</div>
+
+	<footer>
+		<p>
+			Copyright() Бойков Иван ((<a href="mailto:ivan@boykov.tk">ivan@boykov.tk</a>)
+		</p>
+	</footer>
+</body>
+<!--<script type="text/javascript">
+	let board = document.getElementById("board");
+	let table = document.createElement("table")
+	for (let row = 0; row < 8; row++) {
+		let tr = document.createElement("tr")
+		for (let col = 0; col < 8; col++) {
+			let cellImage=document.createElement("img");
+			
+			let cellClass = "cell-black";
+			if ((row + col) % 2 == 0) {
+				//белое поле
+				cellClass = "cell-white";
+				cellImage.src="img/beloe-pole.svg";
+				cellImage.alt="Белое поле";
+			} else {
+				//черное поле
+				if(row> 4){
+					//с белой шашкой
+					cellImage.src="img/belaya-shashka.svg";
+					cellImage.alt="Белая шашка";
+					cellClass="cell-white-checker";
+				}else if(row < 3){
+					//с черной шашкой
+					cellImage.src="img/chyornaya-shashka.svg";
+					cellImage.alt="Черная шашка";
+					cellClass="cell-black-checker";
+				}
+				else{
+					//без шашки
+					cellClass="cell-black";
+					cellImage.src="img/chyornoe-pole.svg";
+					cellImage.alt="Черное поле";
+				}
+			}
+			let cell = document.createElement("td");
+			cell.appendChild(cellImage);
+			cell.classList.add(cellClass);
+			cell.classList.add("board-cell");
+			tr.appendChild(cell)
+		}
+		table.appendChild(tr);
+	}
+	board.appendChild(table);
+</script>
+-->
+
+</html>
