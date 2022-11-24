@@ -1,6 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 const LETTERS = "ABCDEFG";
+const IMAGES_FIELDS={
+	black: "img/chyornoe-pole.svg",
+	white: "img/beloe-pole.svg"
+};
+const IMAGES_CHECKERS={
+	black: "img/chyornaya-shashka.svg",
+	white: "img/belaya-shashka.svg"
+};
+const ALT_FIELDS={
+	white: "белое поле",
+	black: "черное поле"
+};
+const ALT_CHECKERS={
+	black: "чёрная шашка",
+	white: "белая шашка"
+};
+
 class Board extends React.Component {
 	constructor(props) {
 		super(props);
@@ -33,15 +50,13 @@ handleClick(i, j){
 }
 function createChecker(row, col, callback) {
 	let color = ((row + col) % 2 == 0) ? "white" : "black";
-	let type;
+	let type="none";
 	if (color == "black") {
 		if (row > 4)
 			type = "white";
 		if (row < 3)
 			type = "black";
-	} else {
-		type = "none";
-	}
+	} 
 	return {
 		color: color,
 		type: type,
@@ -76,8 +91,11 @@ class Field extends React.Component {
 }
 class Checker extends React.Component {
 	render() {
+		let v=this.props.value;
+		let url= v.type == "none" ? IMAGES_FIELDS[v.color] : IMAGES_CHECKERS[v.type];
+		let text = v.type == "none" ? ALT_FIELDS[v.color] : ALT_CHECKERS[v.type];
 		return <div onClick={this.props.value.callback}>
-			{this.props.value.color} поле {this.props.value.type} шашка
+			<img src={url} alt={text} ></img>
 		</div>;
 	}
 }
