@@ -32,7 +32,7 @@ handleClick(i, j){
 }
 
 	render() {
-		return <div>{
+		return <div id"board">{
 			<Field field={this.state.field}></Field>
 		}</div>;
 	}
