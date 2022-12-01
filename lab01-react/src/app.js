@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 const LETTERS = "ABCDEFG";
-const IMAGES_FIELDS={
-	black: "img/chyornoe-pole.svg",
-	white: "img/beloe-pole.svg"
-};
+
 const IMAGES_CHECKERS={
 	black: "img/chyornaya-shashka.svg",
 	white: "img/belaya-shashka.svg"
@@ -32,9 +29,9 @@ handleClick(i, j){
 }
 
 	render() {
-		return <div id"board">{
+		return <div id="board">
 			<Field field={this.state.field}></Field>
-		}</div>;
+		</div>;
 	}
 	createField() {
 		let field = [];
@@ -92,9 +89,9 @@ class Field extends React.Component {
 class Checker extends React.Component {
 	render() {
 		let v=this.props.value;
-		let url= v.type == "none" ? IMAGES_FIELDS[v.color] : IMAGES_CHECKERS[v.type];
+		let url= v.type != null ? IMAGES_CHECKERS[v.type] : "img/blank.svg";
 		let text = v.type == "none" ? ALT_FIELDS[v.color] : ALT_CHECKERS[v.type];
-		return <div onClick={this.props.value.callback}>
+		return <div className={"field-" + v.color} onClick={this.props.value.callback}>
 			<img src={url} alt={text} ></img>
 		</div>;
 	}

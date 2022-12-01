@@ -7,3 +7,9 @@
 
 	display: block;
 }
+#board .field-black{
+background-color: black;
+}
+#board .field-white{
+	background-color: white;
+	}
